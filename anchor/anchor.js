@@ -19,7 +19,7 @@ const BACKEND_PORT = 23511;
 const APP_DIR = __dirname + '/app';
 const ROOT_DIR = __dirname + '/root';
 const LAYOUT_DIR = __dirname + '/data';
-const DEFAULT_LAYOUT = LAYOUT_DIR + '/layout.json';
+const DEFAULT_LAYOUT = LAYOUT_DIR + '/current-layout.json';
 
 // redis configuration
 // send on publish channel: input, text: id
@@ -111,7 +111,7 @@ app.use('/img', express.static(ROOT_DIR + '/img'));
 app.use('/js', express.static(ROOT_DIR + '/js'));
 app.use('/css', express.static(ROOT_DIR + '/css'));
 app.use('/data', express.static(ROOT_DIR + '/data'));
-app.use(express.favicon(ROOT_DIR + '/img/favicon.ico'));
+// app.use(express.favicon(ROOT_DIR + '/img/favicon.ico'));
 
 /**
  * Setup one generic route that always points to the index.html
